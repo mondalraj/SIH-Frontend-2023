@@ -24,7 +24,7 @@ const page = () => {
                 It is an anglo-saxon model of practice where the practice area is litigation only, and is centered around a Senior Advocate (Barrister) who has
                 the task to prepare and argue cases in courts of record (High Courts and Supreme Court of India). This practice is particularly unique in Delhi. If
                 you are in the chamber of a Senior Advocate, by no means a reflection on his age, experience or intelligence, then you are in that rarefied
-                atmosphere where there is little oxygen to breathe. I present to the uninitiated, the anatomy of a Senior Advocate’s Chamber:
+                atmosphere where there is little oxygen to breathe. I present to the uninitiated, the anatomy of a Senior Advocate{"'"}s Chamber:
 
 
 
@@ -38,12 +38,11 @@ const page = () => {
                 going to play tennis in the morning, as he enters the Supreme Court and before he reaches the courtroom, and most definitely within 15
                 minutes of the entry of the last lawyer in.
 
-                The logic is summed up for the client as follows: he is all knowing, all pervading, all encompassing, and hence he doesn’t need to know much.
-                So long as he knows the bank balance of the client, and where his next 5 appearances are coming from, the Senior doesn’t care much.
+                The logic is summed up for the client as follows: he is all knowing, all pervading, all encompassing, and hence he doesn{"'"}t need to know much.
+                So long as he knows the bank balance of the client, and where his next 5 appearances are coming from, the Senior doesn{"'"}t care much.
 
-                However, it is a known and admitted fact that Seniors are usually not well acquainted with the brief, they don’t read, forget about making notes
+                However, it is a known and admitted fact that Seniors are usually not well acquainted with the brief, they don{"'"}t read, forget about making notes
                 or applying their mind. They are sometimes just mouth piece of the briefing counsel who keeps talking into his ear, and the Senior keeps
-                reproducing the brief with “I'm Obliged” “My Lordship is very kind” etc etc etc.
 
                 There have been cases when Senior Counsels have not known the names of their clients, have stood on the wrong side of podium to address
                 the court (because they did not know the name of their client- and whether they are petitioner or respondent), have been thoroughly
@@ -65,13 +64,13 @@ const page = () => {
                 more fee. Most Senior Advocates in Delhi have large, lavish offices overflowing with rows of cubicles for junior lawyers, fancy rest area/ reception
                 for clients to sit and admire the largess of the Senior while remembering why he is paying so much for his services.
 
-                Tea and coffee is served with generosity although there are a few exceptions to this rule, where Senior’s staff is so stingy with tea that you
-                would think they were serving it with a drop of gold. The Senior’s chamber is well decorated, with his achievements- medals, certificates of
+                Tea and coffee is served with generosity although there are a few exceptions to this rule, where Senior{"'"}s staff is so stingy with tea that you
+                would think they were serving it with a drop of gold. The Senior{"'"}s chamber is well decorated, with his achievements- medals, certificates of
                 foreign universities, photos of him shaking hands with ministers/foreign dignitaries or photos of him skiing in the mountains are strategically
                 placed- to further impress upon the client on why the great Senior is so great and why he is paying so much.
 
                 There will always be a rush of people coming in and going out, with a dozen or so interns tagging along for each conference alongwith the
-                juniors and the briefing counsel and the client. It is nothing less than a full fair inside the Senior’s den
+                juniors and the briefing counsel and the client. It is nothing less than a full fair inside the Senior{"'"}s den
             </div>
             <div className="flex-grow border-t-2 border-gray-700 w-[94%] relative top-[3.8rem] -z-20 text-black">.</div>
             <div className="flex justify-center flex-col items-center">
