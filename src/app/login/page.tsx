@@ -10,7 +10,7 @@ const page = () => {
                         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
                             <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl">Sign in</h2>
                             <p className="mt-2 text-sm text-gray-600">
-                                Don&apos;t have an account?{' '}
+                                {"Don't"} have an account?{' '}
                                 <Link
                                     href="/signup"
                                     title=""
