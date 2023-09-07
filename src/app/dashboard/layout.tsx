@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="">
+    <html lang="en" suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
         <div className="relative bg-[#121207] h-screen flex flex-row justify-between items-stretch">
           <div className="w-1/4 min-w-max bg-gradient-to-br from-black via-zinc-950 to-gray-800 rounded-[20px] m-4 mr-2 p-4 relative">
             <div>
