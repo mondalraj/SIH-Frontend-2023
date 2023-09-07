@@ -36,13 +36,17 @@ const Navbar = () => {
       </div>
 
       <div onClick={handleNav} className="block sm:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        {nav ? (
+          <AiOutlineClose size={20} className="text-black" />
+        ) : (
+          <AiOutlineMenu size={20} />
+        )}
       </div>
 
       <div
         className={
           nav
-            ? "fixed top-0 right-0 pt-4 w-[30%] h-full ease-in-out duration-500 bg-white"
+            ? "fixed top-0 right-0 pt-4 w-[30%] h-full ease-in-out duration-500 bg-black"
             : "pt-24 ease-in-out duration-500 fixed left-[-100%]"
         }
       >
@@ -50,14 +54,14 @@ const Navbar = () => {
           <AiOutlineClose size={20} />
         </div>
 
-        <ul className="text-center">
+        <ul className="text-center text-white">
           <li className="p-4 cursor-pointer">
             <a href="/">Home</a>
           </li>
           <li className="p-4 cursor-pointer">
             <a href="#">Features</a>
           </li>
-          <li className="p-4 font-semibold cursor-pointer">
+          <li className="p-4 cursor-pointer">
             <a href="#">About Us</a>
           </li>
           <li className="p-4 cursor-pointer">
