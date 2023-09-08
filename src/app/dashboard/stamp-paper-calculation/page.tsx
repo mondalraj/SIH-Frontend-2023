@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const page = () => {
+const StampPaperCalculation = () => {
 
     const state = ["Andhra Pradesh",
         "Arunachal Pradesh",
@@ -241,4 +241,4 @@ const page = () => {
     )
 }
 
-export default page
+export default StampPaperCalculation;
