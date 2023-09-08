@@ -21,9 +21,7 @@ body {
   background: black;
 }
 
-.remove-scroll::-webkit-scrollbar {
-  display: none;
-}
+
   background: linear-gradient(
       to bottom,
       transparent,
@@ -31,3 +29,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.remove-scroll::-webkit-scrollbar {
+  display: none;
+}
