@@ -11,28 +11,28 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" h-24 w-full bg-black text-white">
-      <div className=" flex h-24 py-4 w-full justify-between bg-black">
+    <div className=" h-24 w-full bg-[#0C0C0C] text-white px-5">
+      <div className=" flex h-24 py-4 w-full justify-between bg-[#0c0c0c]">
         <Image src="/images/logo.png" alt="Laptop" height={100} width={200} />
         <ul className="hidden sm:flex">
           <li className="p-4 cursor-pointer">
-            <a href="/">Home</a>
+            <a className="text-lg" href="/">Home</a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a href="#">Features</a>
+            <a className="text-lg" href="#">Features</a>
           </li>
 
           <li className="p-4 cursor-pointer">
-            <a href="#">About Us</a>
+            <a className="text-lg" href="#">About Us</a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a href="#">Legal Resources</a>
+            <a className="text-lg" href="#">Legal Resources</a>
           </li>
         </ul>
 
-        <p className=" p-2 m-2 text-white border-2 border-grey-600 rounded-full cursor-pointer hover:shadow-md hover:shadow-gray-700">
-          <a href="#">Get Trial!</a>
-        </p>
+        <div className="border-white border-2 m-4 h-fit px-5 rounded-xl">
+          Get Trail !
+        </div>
       </div>
 
       <div onClick={handleNav} className="block sm:hidden">
@@ -56,16 +56,16 @@ const Navbar = () => {
 
         <ul className="text-center text-white">
           <li className="p-4 cursor-pointer">
-            <a href="/">Home</a>
+            <a className="text-lg" href="/">Home</a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a href="#">Features</a>
+            <a className="text-lg" href="#">Features</a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a href="#">About Us</a>
+            <a className="text-lg" href="#">About Us</a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a href="#">Legal Resources</a>
+            <a className="text-lg" href="#">Legal Resources</a>
           </li>
         </ul>
       </div>

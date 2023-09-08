@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body suppressHydrationWarning={true}>
+    <html lang="en">
+      <body className="">
         <div className="relative bg-[#121207] h-screen flex flex-row justify-between items-stretch">
           <div className="w-1/4 min-w-max bg-gradient-to-br from-black via-zinc-950 to-gray-800 rounded-[20px] m-4 mr-2 p-4 relative">
             <div>
@@ -26,8 +26,8 @@ export default function RootLayout({
                   alt="Logo"
                 />
                 <div className="text-sm my-auto">
-                  <div className="tracking-widest font-semibold">LEGI</div>
-                  <div className="tracking-widest font-semibold">COMPANION</div>
+                  <div className="tracking-widest font-semibold text-white">LEGI</div>
+                  <div className="tracking-widest font-semibold text-white">COMPANION</div>
                 </div>
               </div>
               <svg
@@ -65,34 +65,34 @@ export default function RootLayout({
             <div>
               <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                 <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                  <BsRobot />
+                  <BsRobot color="white" />
                 </div>
-                <div>Legal Document AI</div>
+                <div className="text-white">Legal Document AI</div>
               </div>
               <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                 <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                  <HiDocumentText />
+                  <HiDocumentText color="white" />
                 </div>
-                <div>Document Generation</div>
+                <div className="text-white" >Document Generation</div>
               </div>
               <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                 <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                  <GiPostStamp />
+                  <GiPostStamp color="white" />
                 </div>
-                <div>Stamp Paper Calculation</div>
+                <div className="text-white">Stamp Paper Calculation</div>
               </div>
               <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                 <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                  <BsFillPersonBadgeFill />
+                  <BsFillPersonBadgeFill color="white" />
                 </div>
-                <div>Legal Expert Consultation</div>
+                <div className="text-white">Legal Expert Consultation</div>
               </div>
             </div>
             <div className="absolute bottom-5 px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg right-4 left-4 group  hover:bg-[#1A1F37] cursor-pointer transition-all">
               <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                <BsRocketTakeoffFill />
+                <BsRocketTakeoffFill color="white" />
               </div>
-              <div>Log Out</div>
+              <div className="text-white">Log Out</div>
             </div>
           </div>
 
