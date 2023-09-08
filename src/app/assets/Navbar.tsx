@@ -30,7 +30,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="border-white border-2 m-4 h-fit px-5 rounded-xl">
+        <div className="border-white border-2 m-4 py-2 h-fit px-5 rounded-xl">
           Get Trail !
         </div>
       </div>
