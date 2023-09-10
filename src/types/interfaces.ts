@@ -3,3 +3,7 @@ export interface BlogCardProps {
   Heading: string;
   Description: string;
 }
+
+export interface ButtonProps {
+  name: string;
+}
