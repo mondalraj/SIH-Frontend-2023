@@ -1,6 +1,12 @@
+"use client";
+import { onAuthStateChanged } from "firebase/auth";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
+import { auth } from "../../Firebase";
+
 import {
   BsFillPersonBadgeFill,
   BsRobot,
@@ -20,6 +26,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+  const State = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const uid = user.uid;
+        // ...
+      } else {
+        // User is signed out
+        router.push("/");
+        // ...
+      }
+    });
+  }
+
+  useEffect(() => {
+    State();
+  }, [auth.currentUser?.uid]);
   return (
     <html lang="en">
       <body className="">
@@ -108,14 +133,14 @@ export default function RootLayout({
                 </div>
               </Link>
             </div>
-            <Link href="/">
+            <div onClick={() => auth.signOut()}>
               <div className="absolute bottom-5 px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg right-4 left-4 group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                 <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
                   <BsRocketTakeoffFill color="white" />
                 </div>
                 <div className="text-white">Log Out</div>
               </div>
-            </Link>
+            </div>
           </div>
 
           <div className="w-full bg-gradient-to-br from-black via-zinc-950 to-gray-800 rounded-[20px] m-4 ml-2 p-3">
