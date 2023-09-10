@@ -1,6 +1,7 @@
 import { BlogCardProps } from "@/types/interfaces";
+import Link from "next/link";
 
-const BlogCard = ({ Description, Heading, Image }: BlogCardProps) => {
+const BlogCard = ({ Description, Heading, Image, id }: BlogCardProps) => {
   return (
     <div>
       <div className="relative h-[250px] w-[350px] rounded-md">
@@ -21,9 +22,11 @@ const BlogCard = ({ Description, Heading, Image }: BlogCardProps) => {
             {Description ||
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?"}
           </p>
-          <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
-            Read More &rarr;
-          </button>
+          <Link href={`blogs/blog/${id}`}>
+            <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
+              Read More &rarr;
+            </button>
+          </Link>
         </div>
       </div>
     </div>

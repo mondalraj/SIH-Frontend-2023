@@ -5,7 +5,7 @@ import { Button } from "./(components)/Button";
 const page = () => {
   return (
     <div className="pt-16 p-4 bg-black text-white">
-      <div className="flex mx-6 mb-4">
+      <div className="flex mx-24 mb-4">
         <div className="flex-col w-2/5 h-full">
           <a href="blogs/blog">
             <img
@@ -36,49 +36,56 @@ const page = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="py-7 ml-24">
         <h1 className="text-3xl font-semibold mb-2">Must Read</h1>
       </div>
       <div className="flex justify-evenly">
         <BlogCard
           Heading="Law Advice"
+          id={3}
           Description="Read about the power of authorship and copyright"
           Image="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
         />
         <BlogCard
           Heading="Legal Insights"
+          id={5}
           Description="Stay updated with expert insights on the latest legal developments and cases."
           Image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8anVzdGljZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
         />
         <BlogCard
           Heading="Justice Journal"
+          id={6}
           Description="A deep dive into the world of justice, rights, and the law."
           Image="https://images.unsplash.com/reserve/unsplash_52d3d6f9853e9_1.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGp1c3RpY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
         />
       </div>
-      <div className="flex p-6">
+      <div className="flex p-6 py-20">
         <div className="flex-col w-2/3">
-          <h1 className="text-3xl font-semibold mb-2">Popular Reads</h1>
+          <h1 className="text-3xl font-semibold mb-5 ml-28">Popular Reads</h1>
           <div className="flex justify-evenly mx-2">
             <BlogCardSm
               Heading="Courting Justice"
+              id={1}
               Description="Navigating the courts, ethics, and the pursuit of justice."
               Image="https://plus.unsplash.com/premium_photo-1661490362168-ed29e6592134?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVzdGljZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
             />
             <BlogCardSm
               Heading="Law & Beyond"
+              id={2}
               Description="Beyond the statutes—discussing the broader implications of the law."
               Image="https://images.unsplash.com/photo-1423592707957-3b212afa6733?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGF3fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
             />
           </div>
           <div className="flex justify-evenly mx-2">
             <BlogCardSm
+              id={3}
               Heading="Law Advice"
               Description="Read about the power of authorship and copyright"
               Image="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
             />
             <BlogCardSm
               Heading="Legal Illuminations"
+              id={4}
               Description="Shedding light on legal issues with clarity and expertise"
               Image="https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGF3fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
             />

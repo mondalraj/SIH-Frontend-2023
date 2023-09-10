@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function TestimonialSection() {
   return (
-    <section className="px-2 py-10 mt-20 md:px-0">
+    <section id="testimonials" className="px-2 py-10 mt-20 md:px-0">
       <div className="mx-auto max-w-4xl">
         <Image
           src="/images/review-image.png"
