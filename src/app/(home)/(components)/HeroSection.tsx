@@ -24,7 +24,7 @@ const HeroSection = () => {
           Save time, reduce errors, and increase access to justice by automating
           legal document drafting in plain language with LegiCompanion.
         </p>
-        <p className="text-lg -mt-7">
+        <p className="text-lg ">
           Users can customize documents and access expert legal advice with
           needed.
         </p>
@@ -70,7 +70,7 @@ const HeroSection = () => {
             height={300}
             width={300}
             alt="sample"
-            className="rounded-lg top-[6rem] absolute left-0 bottom-0 drop-shadow-2xl "
+            className="rounded-lg top-[8rem] absolute left-0 bottom-0 drop-shadow-2xl "
           />
         </div>
       </div>
@@ -85,7 +85,10 @@ const HeroSection = () => {
             </button>
             <ul className="pr-20 m-12 mt-8 list-disc leading-loose">
               <li className="m-1 text-xl">
-                Our AI-powered tool simplifies legal documents to help users better understand complex issues and resolve their doubts through interactive question-and-answer interactions with LegalAI.
+                Our AI-powered tool simplifies legal documents to help users
+                better understand complex issues and resolve their doubts
+                through interactive question-and-answer interactions with
+                LegalAI.
               </li>
             </ul>
           </div>

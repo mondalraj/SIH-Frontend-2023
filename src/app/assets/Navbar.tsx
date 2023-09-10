@@ -16,22 +16,30 @@ const Navbar = () => {
         <Image src="/images/logo.png" alt="Laptop" height={100} width={200} />
         <ul className="hidden sm:flex">
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="/">Home</a>
+            <a className="text-lg" href="/">
+              Home
+            </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">Features</a>
+            <a className="text-lg" href="#">
+              Features
+            </a>
           </li>
 
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">About Us</a>
+            <a className="text-lg" href="#">
+              About Us
+            </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">Legal Resources</a>
+            <a className="text-lg" href="#">
+              Legal Resources
+            </a>
           </li>
         </ul>
 
         <div className="border-white border-2 m-4 py-2 h-fit px-5 rounded-xl">
-          Get Trail !
+          Get Trial !
         </div>
       </div>
 
@@ -56,16 +64,24 @@ const Navbar = () => {
 
         <ul className="text-center text-white">
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="/">Home</a>
+            <a className="text-lg" href="/">
+              Home
+            </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">Features</a>
+            <a className="text-lg" href="#">
+              Features
+            </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">About Us</a>
+            <a className="text-lg" href="#">
+              About Us
+            </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">Legal Resources</a>
+            <a className="text-lg" href="#">
+              Legal Resources
+            </a>
           </li>
         </ul>
       </div>
