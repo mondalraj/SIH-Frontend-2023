@@ -6,7 +6,7 @@ import { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { auth } from "../../Firebase/firebase";
 
-const page = () => {
+const Login = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
     const router = useRouter();
@@ -148,4 +148,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Login

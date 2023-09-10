@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 
-const page = () => {
+const SignUp = () => {
     const router = useRouter();
     const [name, setname] = useState("");
     const [email, setemail] = useState("");
@@ -193,4 +193,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default SignUp;
