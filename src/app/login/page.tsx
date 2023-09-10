@@ -1,7 +1,53 @@
-import Link from "next/link"
-import { BsArrowRightShort } from "react-icons/bs"
+"use client";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { BsArrowRightShort } from "react-icons/bs";
+import { auth } from "../../Firebase";
 
-const page = () => {
+
+
+const Login = () => {
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
+    const router = useRouter();
+
+    const GoogleLogin = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                router.push("/dashboard/legal-document-ai");
+                // The signed-in user info.
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    }
+
+    const EmailLogin = () => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                router.push("/dashboard/legal-document-ai");
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
     return (
         <div>
             <section>
@@ -30,6 +76,7 @@ const page = () => {
                                             <input
                                                 className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                                 type="email"
+                                                onChange={(e) => setemail(e.target.value)}
                                                 placeholder="Email"
                                             ></input>
                                         </div>
@@ -54,6 +101,7 @@ const page = () => {
                                                 className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                                 type="password"
                                                 placeholder="Password"
+                                                onChange={(e) => setpassword(e.target.value)}
                                                 autoComplete="false"
                                             ></input>
                                         </div>
@@ -61,6 +109,7 @@ const page = () => {
                                     <div>
                                         <button
                                             type="button"
+                                            onClick={EmailLogin}
                                             className="inline-flex w-full items-center border-white border justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white"
                                         >
                                             Get started <BsArrowRightShort className="ml-2" size={16} />
@@ -71,7 +120,8 @@ const page = () => {
                             <div className="mt-3 space-y-3">
                                 <button
                                     type="button"
-                                    className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 focus:bg-gray-100 focus:text-white focus:outline-none"
+                                    onClick={GoogleLogin}
+                                    className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 focus:outline-none"
                                 >
                                     <span className="mr-2 inline-block">
                                         <svg
@@ -101,4 +151,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Login
