@@ -22,20 +22,20 @@ const Navbar = () => {
             </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">
+            <a className="text-lg" href="#features">
               Features
             </a>
           </li>
 
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">
-              About Us
+            <a className="text-lg" href="#testimonials">
+              Testimonials
             </a>
           </li>
           <li className="p-4 cursor-pointer">
-            <a className="text-lg" href="#">
+            <Link className="text-lg" href="/blogs">
               Legal Resources
-            </a>
+            </Link>
           </li>
         </ul>
 

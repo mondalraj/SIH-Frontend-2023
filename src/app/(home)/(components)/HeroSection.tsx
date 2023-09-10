@@ -36,7 +36,7 @@ const HeroSection = () => {
           className="mt-6"
         />
       </div>
-      <div className="flex min-h-fit">
+      <div id="features" className="flex min-h-fit">
         <div className="flex-1 flex-col p-8 pt-16">
           <h1 className="font-bold text-3xl pt-4">
             Features That Empower <br /> Your Legal Journey
