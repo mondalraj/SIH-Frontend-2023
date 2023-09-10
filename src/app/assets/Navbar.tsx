@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
@@ -37,10 +38,11 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-
-        <div className="border-white border-2 m-4 py-2 h-fit px-5 rounded-xl">
-          Get Trial !
-        </div>
+        <Link href={"/login"}>
+          <div className="border-white border-2 m-4 py-2 h-fit px-5 rounded-xl">
+            Get Trial !
+          </div>
+        </Link>
       </div>
 
       <div onClick={handleNav} className="block sm:hidden">
