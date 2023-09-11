@@ -2,9 +2,9 @@
 import { onAuthStateChanged } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { auth } from "../../Firebase";
+import { auth } from "../../config/Firebase";
 
 import {
   BsFillPersonBadgeFill,
@@ -39,7 +39,7 @@ export default function RootLayout({
         // ...
       }
     });
-  }
+  };
 
   useEffect(() => {
     State();
