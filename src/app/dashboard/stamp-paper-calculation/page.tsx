@@ -255,7 +255,7 @@ const StampPaperCalculation = () => {
           <div className="flex items-center">
             <div className="ml-4 space-y-1">
               <p className="text-xl font-medium leading-none text-green-500">
-                What's Stamp Duty ?
+                What is Stamp Duty ?
               </p>
               <p className="text-sm text-muted-foreground text-white pt-2">
                 Stamp duty is a tax levied by the government on certain
@@ -274,7 +274,7 @@ const StampPaperCalculation = () => {
           <div className="flex items-center">
             <div className="ml-4 space-y-1">
               <p className="text-xl font-medium leading-none text-green-500">
-                What's Registration Charge ?
+                What are Registration Charge ?
               </p>
               <p className="text-sm text-white text-muted-foreground pt-2">
                 The registration charge is a fee levied by the government at the time of registering a property. The amount of registration charge payable varies depending on the state in which the property is located.
