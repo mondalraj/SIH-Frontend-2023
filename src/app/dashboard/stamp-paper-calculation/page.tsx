@@ -71,10 +71,10 @@ const StampPaperCalculation = () => {
           propertyValue <= 500000
             ? 3.5
             : propertyValue <= 750000
-            ? 4
-            : propertyValue <= 10000000
-            ? 4.5
-            : 5,
+              ? 4
+              : propertyValue <= 10000000
+                ? 4.5
+                : 5,
         registrationCharge: 3,
       },
       Gujarat: {
@@ -145,6 +145,7 @@ const StampPaperCalculation = () => {
 
       // Calculate total charges (stamp duty + registration)
       const totalCharges = stampDutyCharges + registrationCharge;
+      console.log("Regis Size", stateRates.length);
 
       setFinalCharges(totalCharges);
       setFinalRates(stampDutyRate + registrationCharge);
@@ -160,91 +161,129 @@ const StampPaperCalculation = () => {
   const [GenderShow, setGenderShow] = useState<boolean>(true);
   const [FinalCharges, setFinalCharges] = useState<any>();
   const [FinalRate, setFinalRates] = useState<any>();
+  console.log("State Size", state.length);
+
+
 
   return (
-    <div>
+    <div className="px-5 h-screen">
       <h2 className="text-3xl font-semibold text-white tracking-wider">
         Stamp Duty Calculator
       </h2>
-      <div className="flex flex-col gap-y-7 mt-10">
-        <div className="w-full md:w-1/3">
-          <label className="text-white font-semibold text-lg tracking-widest">
-            STATE
-          </label>
-          <input
-            className="flex mt-1 h-10 w-full text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
-            type="text"
-            placeholder="State"
-            onClick={() => setStateShow(!stateShow)}
-            defaultValue={stateValue}
-          ></input>
-          <div
-            hidden={stateShow}
-            className="absolute w-1/4 remove-scroll overflow-y-scroll h-1/5 p-2 mt-1 rounded-lg bg-[#0c0c0c]"
-          >
-            {state.map((item, idx) => (
-              <div
-                key={idx + 1}
-                onClick={() => {
-                  setState(item);
-                  setStateShow(true);
-                }}
-                className="text-white p-1 cursor-pointer rounded-md font-semibold hover:bg-[#1976D2]"
-              >
-                {item}
-              </div>
-            ))}
+      <div className="flex w-full justify-around">
+        <div className="flex w-[70%] flex-col gap-y-7 mt-10">
+          <div className="w-full md:w-1/3">
+            <label className="text-white font-semibold text-lg tracking-widest">
+              STATE
+            </label>
+            <input
+              className="flex mt-1 h-10 w-full text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
+              type="text"
+              placeholder="State"
+              onClick={() => setStateShow(!stateShow)}
+              defaultValue={stateValue}
+            ></input>
+            <div
+              hidden={stateShow}
+              className="absolute w-1/6 remove-scroll overflow-y-scroll h-1/5 p-2 mt-1 rounded-lg bg-[#0c0c0c]"
+            >
+              {state.map((item, idx) => (
+                <div
+                  key={idx + 1}
+                  onClick={() => {
+                    setState(item);
+                    setStateShow(true);
+                  }}
+                  className="text-white p-1 cursor-pointer rounded-md font-semibold hover:bg-[#1976D2]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full md:w-1/3">
+            <label className="text-white font-semibold text-lg tracking-widest">
+              GENDER
+            </label>
+            <input
+              className="flex h-10 w-full mt-1 text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
+              type="text"
+              onClick={() => setGenderShow(!GenderShow)}
+              defaultValue={gender}
+              placeholder="Gender"
+            ></input>
+            <div
+              hidden={GenderShow}
+              className="absolute w-1/6 remove-scroll overflow-y-scroll h-max p-2 mt-1 rounded-lg bg-[#0c0c0c]"
+            >
+              {Gender.map((item, idx) => (
+                <div
+                  key={idx + 1}
+                  onClick={() => {
+                    setGender(item);
+                    setGenderShow(true);
+                  }}
+                  className="text-white p-1 cursor-pointer rounded-md font-semibold hover:bg-[#1976D2]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full md:w-1/3">
+            <label className="text-white font-semibold text-lg tracking-widest">
+              PROPERTY VALUE
+            </label>
+            <input
+              className="flex h-10 mt-1 w-full text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
+              type="number"
+              onChange={(e) => setProperty(parseInt(e.target.value))}
+              placeholder="Property Value"
+            ></input>
+          </div>
+          <div className="w-1/4">
+            <button
+              type="button"
+              onClick={() => calculateStampDuty(stateValue, propertyValue, gender)}
+              className="rounded-md mt-5 bg-white px-3 py-2 lg:px-[2.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            >
+              Calculate
+            </button>
           </div>
         </div>
-        <div className="w-full md:w-1/3">
-          <label className="text-white font-semibold text-lg tracking-widest">
-            GENDER
-          </label>
-          <input
-            className="flex h-10 w-full mt-1 text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
-            type="text"
-            onClick={() => setGenderShow(!GenderShow)}
-            defaultValue={gender}
-            placeholder="Gender"
-          ></input>
-          <div
-            hidden={GenderShow}
-            className="absolute w-1/4 remove-scroll overflow-y-scroll h-max p-2 mt-1 rounded-lg bg-[#0c0c0c]"
-          >
-            {Gender.map((item, idx) => (
-              <div
-                key={idx + 1}
-                onClick={() => {
-                  setGender(item);
-                  setGenderShow(true);
-                }}
-                className="text-white p-1 cursor-pointer rounded-md font-semibold hover:bg-[#1976D2]"
-              >
-                {item}
-              </div>
-            ))}
+        <div className=" h-64 remove-scroll overflow-y-scroll space-y-8 w-1/2 border-2 border-white rounded-lg p-4">
+          <div className="flex items-center">
+            <div className="ml-4 space-y-1">
+              <p className="text-xl font-medium leading-none text-green-500">
+                What's Stamp Duty ?
+              </p>
+              <p className="text-sm text-muted-foreground text-white pt-2">
+                Stamp duty is a tax levied by the government on certain
+                documents, such as deeds, contracts, and other legal
+                instruments. The amount of stamp duty payable varies depending
+                on the type of document and the state in which it is executed.
+                In India, the stamp duty is levied by the central government and
+                the state governments. The central government levies stamp duty
+                on certain documents, such as promissory notes, bills of
+                exchange, and cheques. The state governments levy stamp duty on
+                a wider range of documents, such as conveyance deeds, lease
+                deeds, and gift deeds.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="w-full md:w-1/3">
-          <label className="text-white font-semibold text-lg tracking-widest">
-            PROPERTY VALUE
-          </label>
-          <input
-            className="flex h-10 mt-1 w-full text-white font-semibold rounded-md border border-white bg-transparent px-3 py-2 text-sm placeholder:text-gray-700 focus:outline-none"
-            type="number"
-            onChange={(e) => setProperty(parseInt(e.target.value))}
-            placeholder="Property Value"
-          ></input>
+          <div className="flex items-center">
+            <div className="ml-4 space-y-1">
+              <p className="text-xl font-medium leading-none text-green-500">
+                What's Registration Charge ?
+              </p>
+              <p className="text-sm text-white text-muted-foreground pt-2">
+                The registration charge is a fee levied by the government at the time of registering a property. The amount of registration charge payable varies depending on the state in which the property is located.
+                The registration charge is payable by the buyer of the property. The registration charge is usually paid at the time of registration of the property.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <button
-        type="button"
-        onClick={() => calculateStampDuty(stateValue, propertyValue, gender)}
-        className="rounded-md mt-5 bg-white px-3 py-2 lg:px-[2.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-      >
-        View Profile
-      </button>
-
       {FinalCharges && FinalRate && (
         <div className="mt-14 border-white text-white flex p-4 justify-center gap-y-3 items-center flex-col border-2 rounded-md">
           <h2 className="text-2xl">Stamp Duty of your property is</h2>

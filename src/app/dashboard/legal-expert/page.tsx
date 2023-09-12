@@ -2,7 +2,7 @@ import Cards from './(components)/Cards';
 
 const page = () => {
     return (
-        <div className='overflow-y-scroll h-full p-4 flex flex-col gap-y-4 remove-scroll'>
+        <div className='overflow-y-scroll h-[95vh] p-4 flex flex-col gap-y-4 remove-scroll'>
             <div className="w-full md:w-1/3 mb-6">
                 <input
                     className="flex h-10 w-full rounded-lg border-none outline-none bg-[#262626] px-3 py-2 text-sm placeholder:text-[#ffffff77]"
