@@ -28,8 +28,8 @@ const Cards = ({ available, consultation, free, languages, name, reviews }: Card
                                 Languages Known
                             </div>
                             <div className='text-black font-semibold'>
-                                {languages.map((item: string) => (
-                                    <span>{item} </span>
+                                {languages.map((item: string, idx: number) => (
+                                    <span key={idx + 1}>{item} </span>
                                 ))}
                             </div>
                         </div>
