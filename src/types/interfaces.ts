@@ -8,3 +8,12 @@ export interface BlogCardProps {
 export interface ButtonProps {
   name: string;
 }
+
+export interface CardsProps {
+  name: string;
+  languages: Array<string>;
+  available: string;
+  free: boolean;
+  consultation: number;
+  reviews: number;
+}

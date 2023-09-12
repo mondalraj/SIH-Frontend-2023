@@ -1,6 +1,7 @@
+import { CardsProps } from '@/types/interfaces'
 import { BsArrowUpRight } from 'react-icons/bs'
 
-const Cards = () => {
+const Cards = ({ available, consultation, free, languages, name, reviews }: CardsProps) => {
     return (
         <div>
             <div className="flex w-full bg-white flex-col rounded-md border md:flex-row">
@@ -15,11 +16,11 @@ const Cards = () => {
                     <div className='mt-3 flex flex-col gap-y-4'>
                         <div>
                             <h1 className="inline-flex text-black items-center text-lg font-semibold">
-                                Vikram Ahuja <BsArrowUpRight className="ml-2 h-4 w-4" />
+                                {name} <BsArrowUpRight className="ml-2 h-4 w-4" />
                             </h1>
                             <p className="font-semibold text-sm text-gray-600">
                                 Education Qualifications
-                                <span className='ml-3 text-black'>4.5 ✰</span>
+                                <span className={`ml-3 text-black ${reviews < 4 ? 'text-red-500' : 'text-green-500'}`}>{reviews} ✰</span>
                             </p>
                         </div>
                         <div className="">
@@ -27,7 +28,9 @@ const Cards = () => {
                                 Languages Known
                             </div>
                             <div className='text-black font-semibold'>
-                                Hindi, English , Bengali
+                                {languages.map((item: string, idx: number) => (
+                                    <span key={idx + 1}>{item} </span>
+                                ))}
                             </div>
                         </div>
                         <div className="">
@@ -35,13 +38,18 @@ const Cards = () => {
                                 Next Available At
                             </div>
                             <div className='text-black font-semibold'>
-                                5:30 AM, Today
+                                {available}
                             </div>
                         </div>
                     </div>
                     <div className='flex flex-col p-4'>
-                        <div className='text-black font-semibold'>Consultation Fee</div>
-                        <div className='text-black text-3xl font-bold'> 1,300/-</div>
+                        {free ? <div className='text-green-500 text-3xl font-bold'>Free</div> : (
+                            <div>
+                                <div className='text-black font-semibold'>Consultation Fee</div>
+                                <div className='text-black text-3xl font-bold'> {consultation}/-</div>
+                            </div>
+                        )
+                        }
                         <div className='flex flex-col gap-y-3 mt-6'>
                             <div>
                                 <button
