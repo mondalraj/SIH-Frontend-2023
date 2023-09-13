@@ -13,7 +13,22 @@ const LegalDocumentAI = () => {
   const [pdfURL, setPdfURL] = useState<string | null>(null);
   const [question, setQuestion] = useState<string>("");
   const [pdfSummary, setPdfSummary] = useState<string>("");
-  const [chat, setChat] = useState<string[]>([]);
+  const [chat, setChat] = useState<string[]>([
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+  ]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -79,7 +94,8 @@ const LegalDocumentAI = () => {
 
   const handleGetAnswer = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setChat([...chat, question]);
+    setChat((prev) => [...prev, question]);
+    setQuestion("");
     setLoading(true);
 
     fetch(`https://sih-1fm0.onrender.com/legal-ai-chat`, {
@@ -95,8 +111,8 @@ const LegalDocumentAI = () => {
       .then((res) => res.json())
       .then((data: { answer: string }) => {
         setLoading(false);
-        setQuestion("");
-        setChat([...chat, data.answer]);
+
+        setChat((prev) => [...prev, data.answer]);
       });
   };
 
@@ -105,7 +121,7 @@ const LegalDocumentAI = () => {
       {pdfURL ? (
         <div className="text-white w-full h-full flex gap-5">
           <iframe src={`${pdfURL}#toolbar=0`} width="50%" height="100%" />
-          <div className="h-full w-1/2 bg-black p-4 flex flex-col">
+          <div className="h-[93vh] w-1/2 bg-black p-4 flex flex-col overflow-y-scroll remove-scroll">
             <h1 className="text-2xl text-center border-b-2 py-5 flex justify-between items-center">
               Navigating the law. One question at a time.
               <div
@@ -160,9 +176,10 @@ const LegalDocumentAI = () => {
                 <input
                   type="text"
                   name="question"
-                  className="h-10 px-4 rounded-lg w-full bg-gray-800 text-white"
+                  className="h-10 px-4 rounded-lg w-full bg-gray-800 text-white outline-none"
                   placeholder="Enter your question"
                   onChange={(e) => setQuestion(e.target.value)}
+                  value={question}
                 />
                 <button
                   type="submit"
