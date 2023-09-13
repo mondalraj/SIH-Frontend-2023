@@ -71,10 +71,10 @@ const StampPaperCalculation = () => {
           propertyValue <= 500000
             ? 3.5
             : propertyValue <= 750000
-              ? 4
-              : propertyValue <= 10000000
-                ? 4.5
-                : 5,
+            ? 4
+            : propertyValue <= 10000000
+            ? 4.5
+            : 5,
         registrationCharge: 3,
       },
       Gujarat: {
@@ -163,10 +163,8 @@ const StampPaperCalculation = () => {
   const [FinalRate, setFinalRates] = useState<any>();
   console.log("State Size", state.length);
 
-
-
   return (
-    <div className="px-5 h-screen">
+    <div className="px-5 h-max">
       <h2 className="text-3xl font-semibold text-white tracking-wider">
         Stamp Duty Calculator
       </h2>
@@ -244,7 +242,9 @@ const StampPaperCalculation = () => {
           <div className="w-1/4">
             <button
               type="button"
-              onClick={() => calculateStampDuty(stateValue, propertyValue, gender)}
+              onClick={() =>
+                calculateStampDuty(stateValue, propertyValue, gender)
+              }
               className="rounded-md mt-5 bg-white px-3 py-2 lg:px-[2.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Calculate
@@ -277,8 +277,12 @@ const StampPaperCalculation = () => {
                 What are Registration Charge ?
               </p>
               <p className="text-sm text-white text-muted-foreground pt-2">
-                The registration charge is a fee levied by the government at the time of registering a property. The amount of registration charge payable varies depending on the state in which the property is located.
-                The registration charge is payable by the buyer of the property. The registration charge is usually paid at the time of registration of the property.
+                The registration charge is a fee levied by the government at the
+                time of registering a property. The amount of registration
+                charge payable varies depending on the state in which the
+                property is located. The registration charge is payable by the
+                buyer of the property. The registration charge is usually paid
+                at the time of registration of the property.
               </p>
             </div>
           </div>
