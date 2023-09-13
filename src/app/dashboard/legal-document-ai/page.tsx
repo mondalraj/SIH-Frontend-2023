@@ -13,22 +13,7 @@ const LegalDocumentAI = () => {
   const [pdfURL, setPdfURL] = useState<string | null>(null);
   const [question, setQuestion] = useState<string>("");
   const [pdfSummary, setPdfSummary] = useState<string>("");
-  const [chat, setChat] = useState<string[]>([
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-  ]);
+  const [chat, setChat] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,15 +34,13 @@ const LegalDocumentAI = () => {
     uploadBytes(storageRef, file)
       .then((snapshot) => {
         setPdfURL(
-          `https://firebasestorage.googleapis.com/v0/b/${
-            snapshot.metadata.bucket
+          `https://firebasestorage.googleapis.com/v0/b/${snapshot.metadata.bucket
           }/o/legal-documents%2F${encodeURI(snapshot.metadata.name)}?alt=media`
         );
 
         localStorage.setItem(
           "legal-pdf-url",
-          `https://firebasestorage.googleapis.com/v0/b/${
-            snapshot.metadata.bucket
+          `https://firebasestorage.googleapis.com/v0/b/${snapshot.metadata.bucket
           }/o/legal-documents%2F${encodeURI(snapshot.metadata.name)}?alt=media`
         );
         Notify.success("File uploaded successfully");
@@ -70,11 +53,10 @@ const LegalDocumentAI = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            pdfurl: `https://firebasestorage.googleapis.com/v0/b/${
-              snapshot.metadata.bucket
-            }/o/legal-documents%2F${encodeURI(
-              snapshot.metadata.name
-            )}?alt=media`,
+            pdfurl: `https://firebasestorage.googleapis.com/v0/b/${snapshot.metadata.bucket
+              }/o/legal-documents%2F${encodeURI(
+                snapshot.metadata.name
+              )}?alt=media`,
           }),
         })
           .then((res) => res.json())
@@ -121,7 +103,7 @@ const LegalDocumentAI = () => {
       {pdfURL ? (
         <div className="text-white w-full h-full flex gap-5">
           <iframe src={`${pdfURL}#toolbar=0`} width="50%" height="100%" />
-          <div className="h-[93vh] w-1/2 bg-black p-4 flex flex-col overflow-y-scroll remove-scroll">
+          <div className="h-[93vh] w-1/2 bg-black p-4 flex flex-col">
             <h1 className="text-2xl text-center border-b-2 py-5 flex justify-between items-center">
               Navigating the law. One question at a time.
               <div
@@ -147,7 +129,7 @@ const LegalDocumentAI = () => {
                 </div>
               )}
             </div>
-            <div className="overflow-y-auto py-2">
+            <div className="overflow-y-scroll remove-scroll py-2">
               {chat?.map((message, index) =>
                 index % 2 === 0 ? (
                   <div key={index} className="flex justify-end">

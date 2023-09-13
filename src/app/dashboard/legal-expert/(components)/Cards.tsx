@@ -1,22 +1,23 @@
 "use client";
 import { CardsProps } from '@/types/interfaces';
-import { useState } from 'react';
 import { BsArrowUpRight } from 'react-icons/bs';
-import Modal from './Modal';
 
 const Cards = ({ available, consultation, free, languages, name, reviews, email, latestCaseType, about }: CardsProps) => {
-    const [show, setshow] = useState(false);
     return (
         <div>
-            {show &&
-                <Modal
-                    latestCaseType={latestCaseType}
-                    setshow={setshow}
-                    name={name}
-                    about={about}
-                    email={email}
-                />
-            }
+            <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-white">{name} Profile</h3>
+                    <p className="py-2 text-sm"><span className="text-green-500 text-base font-semibold">Email : </span> {email}</p>
+                    <p className="py-2 text-sm"><span className="text-green-500 text-base font-semibold">About : </span> {about}</p>
+                    <p className="py-2 text-sm"><span className="text-green-500 text-base font-semibold">LatestCaseType : </span> {latestCaseType}</p>
+                    <div className="modal-action">
+                        <form method="dialog">
+                            <button className="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
             <div className="flex w-full bg-white flex-col rounded-md border md:flex-row">
                 <div className="h-full w-full flex items-center ml-5 md:h-[200px] md:w-[300px]">
                     <img
@@ -68,7 +69,11 @@ const Cards = ({ available, consultation, free, languages, name, reviews, email,
                                 <button
                                     type="button"
                                     className="rounded-full bg-gray-300 px-3 py-2 lg:px-[3.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                    onClick={() => setshow(true)}
+                                    onClick={() => {
+                                        if (document) {
+                                            (document.getElementById('my_modal_1') as HTMLFormElement).showModal();
+                                        }
+                                    }}
                                 >
                                     View Profile
                                 </button>

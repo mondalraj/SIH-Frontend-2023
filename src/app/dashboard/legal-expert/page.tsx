@@ -32,37 +32,37 @@ const LegalExperts = () => {
       </h3>
       {Free === "Free"
         ? Experts.map((item: CardsProps, idx: number) => {
-            if (item.free === true) {
-              return (
-                <Cards
-                  key={idx + 1}
-                  available={item.available}
-                  consultation={item.consultation}
-                  email={item.email}
-                  free={item.free}
-                  languages={item.languages}
-                  name={item.name}
-                  reviews={item.reviews}
-                  about={item.about}
-                  latestCaseType={item.latestCaseType}
-                />
-              );
-            }
-          })
+          if (item.free === true) {
+            return (
+              <Cards
+                key={idx + 1}
+                available={item.available}
+                consultation={item.consultation}
+                email={item.email}
+                free={item.free}
+                languages={item.languages}
+                name={item.name}
+                reviews={item.reviews}
+                about={item.about}
+                latestCaseType={item.latestCaseType}
+              />
+            );
+          }
+        })
         : Experts.map((item: CardsProps, idx: number) => (
-            <Cards
-              key={idx + 1}
-              available={item.available}
-              email={item.email}
-              consultation={item.consultation}
-              free={item.free}
-              languages={item.languages}
-              name={item.name}
-              reviews={item.reviews}
-              about={item.about}
-              latestCaseType={item.latestCaseType}
-            />
-          ))}
+          <Cards
+            key={idx + 1}
+            available={item.available}
+            email={item.email}
+            consultation={item.consultation}
+            free={item.free}
+            languages={item.languages}
+            name={item.name}
+            reviews={item.reviews}
+            about={item.about}
+            latestCaseType={item.latestCaseType}
+          />
+        ))}
     </div>
   );
 };

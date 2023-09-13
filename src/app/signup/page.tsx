@@ -52,8 +52,6 @@ const SignUp = () => {
             // Profile updated!
             router.push("/dashboard/legal-document-ai");
             console.log("Created");
-
-            // ...
           })
           .catch((error) => {
             // An error occurred
