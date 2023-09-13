@@ -59,6 +59,26 @@ const page = () => {
           Image="https://images.unsplash.com/reserve/unsplash_52d3d6f9853e9_1.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGp1c3RpY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
         />
       </div>
+      <div className="pt-4 flex justify-evenly">
+        <BlogCard
+          Heading="Modern Justice"
+          id={7}
+          Description="Read about the evolution of the justice system"
+          Image="https://images.unsplash.com/photo-1447023029226-ef8f6b52e3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxhd3llcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+        />
+        <BlogCard
+          Heading="Right to Information Act"
+          id={8}
+          Description="Empowering Citizens Through Transparency"
+          Image="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxhd3llcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+        />
+        <BlogCard
+          Heading="Gender Equality"
+          id={9}
+          Description="Reforms in the Indian Legal System."
+          Image="https://images.unsplash.com/photo-1598338430862-3e3098daa722?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGp1c3RpY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+        />
+      </div>
       <div className="flex p-6 py-20">
         <div className="flex-col w-2/3">
           <h1 className="text-3xl font-semibold mb-5 ml-28">Popular Reads</h1>

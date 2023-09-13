@@ -188,7 +188,7 @@ const StampPaperCalculation = () => {
   console.log("State Size", state.length);
 
   return (
-    <div className="px-5 h-screen">
+    <div className="px-5 h-max">
       <h2 className="text-3xl font-semibold text-white tracking-wider">
         Stamp Duty Calculator
       </h2>
