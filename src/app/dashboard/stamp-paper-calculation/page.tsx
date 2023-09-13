@@ -69,7 +69,7 @@ const StampPaperCalculation = () => {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Chandigarh": {
+      Chandigarh: {
         stampDutyRate: gender === "Male" ? 5 : 3,
         registrationCharge: 1,
       },
@@ -81,11 +81,11 @@ const StampPaperCalculation = () => {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Lakshadweep": {
+      Lakshadweep: {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Puducherry": {
+      Puducherry: {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
@@ -194,7 +194,7 @@ const StampPaperCalculation = () => {
       </h2>
       <div className="flex w-full justify-around">
         <div className="flex w-[70%] flex-col gap-y-7 mt-10">
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               STATE
             </label>
@@ -223,7 +223,7 @@ const StampPaperCalculation = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               GENDER
             </label>
@@ -252,7 +252,7 @@ const StampPaperCalculation = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               PROPERTY VALUE
             </label>
@@ -275,7 +275,7 @@ const StampPaperCalculation = () => {
             </button>
           </div>
         </div>
-        <div className=" h-64 remove-scroll overflow-y-scroll space-y-8 w-1/2 border-2 border-white rounded-lg p-4">
+        <div className=" h-96 remove-scroll overflow-y-scroll space-y-8 w-1/2 border-2 border-gray-500 rounded-lg p-4">
           <div className="flex items-center">
             <div className="ml-4 space-y-1">
               <p className="text-xl font-medium leading-none text-green-500">
