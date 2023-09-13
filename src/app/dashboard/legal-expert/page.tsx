@@ -1,5 +1,4 @@
 "use client";
-import { CardsProps } from "@/types/interfaces";
 import { useState } from "react";
 import Cards from "./(components)/Cards";
 import { Experts } from "./Experts";
@@ -31,14 +30,16 @@ const LegalExperts = () => {
         Top Criminal Defense Lawyers Available
       </h3>
       {Free === "Free"
-        ? Experts.map((item: CardsProps, idx: number) => {
+        ? Experts.map((item: any, idx: number) => {
           if (item.free === true) {
             return (
               <Cards
+                id={idx.toString()}
                 key={idx + 1}
                 available={item.available}
                 consultation={item.consultation}
                 email={item.email}
+                image={item.image}
                 free={item.free}
                 languages={item.languages}
                 name={item.name}
@@ -49,12 +50,14 @@ const LegalExperts = () => {
             );
           }
         })
-        : Experts.map((item: CardsProps, idx: number) => (
+        : Experts.map((item: any, idx: number) => (
           <Cards
+            id={idx.toString()}
             key={idx + 1}
             available={item.available}
             email={item.email}
             consultation={item.consultation}
+            image={item.image}
             free={item.free}
             languages={item.languages}
             name={item.name}

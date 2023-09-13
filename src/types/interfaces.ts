@@ -12,9 +12,11 @@ export interface ButtonProps {
 export interface CardsProps {
   name: string;
   languages: Array<string>;
+  id: string;
   available: string;
   about: string;
   latestCaseType: string;
+  image: string;
   free: boolean;
   consultation: number;
   email: string;

@@ -2,10 +2,10 @@
 import { CardsProps } from '@/types/interfaces';
 import { BsArrowUpRight } from 'react-icons/bs';
 
-const Cards = ({ available, consultation, free, languages, name, reviews, email, latestCaseType, about }: CardsProps) => {
+const Cards = ({ id, available, image, consultation, free, languages, name, reviews, email, latestCaseType, about }: CardsProps) => {
     return (
         <div>
-            <dialog id="my_modal_1" className="modal">
+            <dialog id={id} className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg text-white">{name} Profile</h3>
                     <p className="py-2 text-sm"><span className="text-green-500 text-base font-semibold">Email : </span> {email}</p>
@@ -21,7 +21,7 @@ const Cards = ({ available, consultation, free, languages, name, reviews, email,
             <div className="flex w-full bg-white flex-col rounded-md border md:flex-row">
                 <div className="h-full w-full flex items-center ml-5 md:h-[200px] md:w-[300px]">
                     <img
-                        src="https://github.com/tekdi/searchwidget-angular/assets/86917304/26e9bc94-b079-4f9d-ad11-78acddc84103"
+                        src={image || "https://github.com/tekdi/searchwidget-angular/assets/86917304/26e9bc94-b079-4f9d-ad11-78acddc84103"}
                         alt="Laptop"
                         className="h-[90%] w-[90%] rounded-md object-cover"
                     />
@@ -71,7 +71,7 @@ const Cards = ({ available, consultation, free, languages, name, reviews, email,
                                     className="rounded-full bg-gray-300 px-3 py-2 lg:px-[3.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                                     onClick={() => {
                                         if (document) {
-                                            (document.getElementById('my_modal_1') as HTMLFormElement).showModal();
+                                            (document.getElementById(id) as HTMLFormElement).showModal();
                                         }
                                     }}
                                 >

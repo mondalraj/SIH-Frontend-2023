@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <div className=" h-24 w-full bg-[#0C0C0C] text-white px-5">
       <div className=" flex h-24 py-4 w-full justify-between bg-[#0c0c0c]">
-        <Image src="/images/logo.png" alt="Laptop" height={100} width={200} />
+        <Link href={"/"}>
+          <Image src="/images/logo.png" alt="Laptop" height={100} width={200} />
+        </Link>
         <ul className="hidden sm:flex">
           <li className="p-4 cursor-pointer">
             <a className="text-lg" href="/">
