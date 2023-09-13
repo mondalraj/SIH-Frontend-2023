@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { auth } from "../../config/Firebase";
 
 import {
+  BsFillAwardFill,
   BsFillPersonBadgeFill,
   BsRobot,
   BsRocketTakeoffFill,
@@ -107,14 +108,7 @@ export default function RootLayout({
                   <div className="text-white">Legal Document AI</div>
                 </div>
               </Link>
-              <Link href="/dashboard/document-generation">
-                <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
-                  <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
-                    <HiDocumentText color="white" />
-                  </div>
-                  <div className="text-white">Document Generation</div>
-                </div>
-              </Link>
+
               <Link href="/dashboard/stamp-paper-calculation">
                 <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
                   <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
@@ -129,6 +123,23 @@ export default function RootLayout({
                     <BsFillPersonBadgeFill color="white" />
                   </div>
                   <div className="text-white">Legal Expert Consultation</div>
+                </div>
+              </Link>
+              <Link href="/dashboard/ask">
+                <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
+                  <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
+                    <BsFillAwardFill color="white" />
+                  </div>
+                  <div className="text-white">Ask Constitution</div>
+                </div>
+              </Link>
+
+              <Link href="/dashboard/document-generation">
+                <div className="px-3 py-2 flex items-center gap-4 hover:gap-6 rounded-lg group  hover:bg-[#1A1F37] cursor-pointer transition-all">
+                  <div className="p-2 rounded-xl bg-[#1A1F37] group-hover:bg-[#1976D2]">
+                    <HiDocumentText color="white" />
+                  </div>
+                  <div className="text-white">Document Generation</div>
                 </div>
               </Link>
             </div>
