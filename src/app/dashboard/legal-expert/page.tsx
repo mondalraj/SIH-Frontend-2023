@@ -10,7 +10,7 @@ const LegalExperts = () => {
         <div className="overflow-y-scroll h-[95vh] p-4 flex flex-col gap-y-4 remove-scroll">
             <div className="flex w-full md:w-1/3 mb-6">
                 <input
-                    className="flex h-10 w-full rounded-lg border-none outline-none bg-[#262626] px-3 py-2 text-sm placeholder:text-[#ffffff77]"
+                    className="flex h-10 w-full rounded-lg text-white border-none outline-none bg-[#262626] px-3 py-2 text-sm placeholder:text-[#ffffff77]"
                     type="text"
                     placeholder="For which case you are looking for lawyer ?"
                 ></input>
@@ -38,10 +38,13 @@ const LegalExperts = () => {
                                 key={idx + 1}
                                 available={item.available}
                                 consultation={item.consultation}
+                                email={item.email}
                                 free={item.free}
                                 languages={item.languages}
                                 name={item.name}
                                 reviews={item.reviews}
+                                about={item.about}
+                                latestCaseType={item.latestCaseType}
                             />
                         );
                     }
@@ -50,11 +53,14 @@ const LegalExperts = () => {
                     <Cards
                         key={idx + 1}
                         available={item.available}
+                        email={item.email}
                         consultation={item.consultation}
                         free={item.free}
                         languages={item.languages}
                         name={item.name}
                         reviews={item.reviews}
+                        about={item.about}
+                        latestCaseType={item.latestCaseType}
                     />
                 ))}
         </div>

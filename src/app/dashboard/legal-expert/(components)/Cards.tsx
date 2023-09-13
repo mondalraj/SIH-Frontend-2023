@@ -1,9 +1,22 @@
-import { CardsProps } from '@/types/interfaces'
-import { BsArrowUpRight } from 'react-icons/bs'
+"use client";
+import { CardsProps } from '@/types/interfaces';
+import { useState } from 'react';
+import { BsArrowUpRight } from 'react-icons/bs';
+import Modal from './Modal';
 
-const Cards = ({ available, consultation, free, languages, name, reviews }: CardsProps) => {
+const Cards = ({ available, consultation, free, languages, name, reviews, email, latestCaseType, about }: CardsProps) => {
+    const [show, setshow] = useState(false);
     return (
         <div>
+            {show &&
+                <Modal
+                    latestCaseType={latestCaseType}
+                    setshow={setshow}
+                    name={name}
+                    about={about}
+                    email={email}
+                />
+            }
             <div className="flex w-full bg-white flex-col rounded-md border md:flex-row">
                 <div className="h-full w-full flex items-center ml-5 md:h-[200px] md:w-[300px]">
                     <img
@@ -55,6 +68,7 @@ const Cards = ({ available, consultation, free, languages, name, reviews }: Card
                                 <button
                                     type="button"
                                     className="rounded-full bg-gray-300 px-3 py-2 lg:px-[3.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                    onClick={() => setshow(true)}
                                 >
                                     View Profile
                                 </button>

@@ -51,10 +51,13 @@ const SignUp = () => {
           .then((res) => {
             // Profile updated!
             router.push("/dashboard/legal-document-ai");
+            console.log("Created");
+
             // ...
           })
           .catch((error) => {
             // An error occurred
+            console.log(error);
             // ...
           });
         console.log(user);
