@@ -14,6 +14,7 @@ const LegalDocumentAI = () => {
   const [question, setQuestion] = useState<string>("");
   const [pdfSummary, setPdfSummary] = useState<string>("");
   const [chat, setChat] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("legal-pdf-url")) {
@@ -78,6 +79,8 @@ const LegalDocumentAI = () => {
 
   const handleGetAnswer = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setChat([...chat, question]);
+    setLoading(true);
 
     fetch(`https://sih-1fm0.onrender.com/legal-ai-chat`, {
       method: "POST",
@@ -91,7 +94,8 @@ const LegalDocumentAI = () => {
     })
       .then((res) => res.json())
       .then((data: { answer: string }) => {
-        setChat([...chat, question]);
+        setLoading(false);
+        setQuestion("");
         setChat([...chat, data.answer]);
       });
   };
@@ -117,7 +121,16 @@ const LegalDocumentAI = () => {
                 <BsCloudUploadFill size={16} />
               </div>
             </h1>
-            <div className="py-4">{pdfSummary}</div>
+            <div className="py-4">
+              {pdfSummary ? (
+                pdfSummary
+              ) : (
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-blue-600 animate-pulse"></div>
+                  <span className="text-blue-600">Generating Summary...</span>
+                </div>
+              )}
+            </div>
             <div className="overflow-y-auto py-2">
               {chat?.map((message, index) =>
                 index % 2 === 0 ? (
@@ -133,6 +146,13 @@ const LegalDocumentAI = () => {
                     </div>
                   </div>
                 )
+              )}
+              {loading && (
+                <div className="flex justify-start">
+                  <div className="bg-blue-500 rounded-lg p-2 text-white mr-6 my-1 animate-pulse">
+                    Legal AI is typing...
+                  </div>
+                </div>
               )}
             </div>
             <div className="mt-auto relative">
