@@ -69,7 +69,7 @@ const StampPaperCalculation = () => {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Chandigarh": {
+      Chandigarh: {
         stampDutyRate: gender === "Male" ? 5 : 3,
         registrationCharge: 1,
       },
@@ -81,11 +81,11 @@ const StampPaperCalculation = () => {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Lakshadweep": {
+      Lakshadweep: {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
-      "Puducherry": {
+      Puducherry: {
         stampDutyRate: gender === "Male" ? 6 : 4,
         registrationCharge: 1,
       },
@@ -95,10 +95,10 @@ const StampPaperCalculation = () => {
           propertyValue <= 500000
             ? 3.5
             : propertyValue <= 750000
-              ? 4
-              : propertyValue <= 10000000
-                ? 4.5
-                : 5,
+            ? 4
+            : propertyValue <= 10000000
+            ? 4.5
+            : 5,
         registrationCharge: 3,
       },
       Gujarat: {
@@ -187,8 +187,6 @@ const StampPaperCalculation = () => {
   const [FinalRate, setFinalRates] = useState<any>();
   console.log("State Size", state.length);
 
-
-
   return (
     <div className="px-5 h-screen">
       <h2 className="text-3xl font-semibold text-white tracking-wider">
@@ -196,7 +194,7 @@ const StampPaperCalculation = () => {
       </h2>
       <div className="flex w-full justify-around">
         <div className="flex w-[70%] flex-col gap-y-7 mt-10">
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               STATE
             </label>
@@ -225,7 +223,7 @@ const StampPaperCalculation = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               GENDER
             </label>
@@ -254,7 +252,7 @@ const StampPaperCalculation = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/2">
             <label className="text-white font-semibold text-lg tracking-widest">
               PROPERTY VALUE
             </label>
@@ -268,14 +266,16 @@ const StampPaperCalculation = () => {
           <div className="w-1/4">
             <button
               type="button"
-              onClick={() => calculateStampDuty(stateValue, propertyValue, gender)}
+              onClick={() =>
+                calculateStampDuty(stateValue, propertyValue, gender)
+              }
               className="rounded-md mt-5 bg-white px-3 py-2 lg:px-[2.8rem] text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Calculate
             </button>
           </div>
         </div>
-        <div className=" h-64 remove-scroll overflow-y-scroll space-y-8 w-1/2 border-2 border-white rounded-lg p-4">
+        <div className=" h-96 remove-scroll overflow-y-scroll space-y-8 w-1/2 border-2 border-gray-500 rounded-lg p-4">
           <div className="flex items-center">
             <div className="ml-4 space-y-1">
               <p className="text-xl font-medium leading-none text-green-500">
@@ -301,8 +301,12 @@ const StampPaperCalculation = () => {
                 What are Registration Charge ?
               </p>
               <p className="text-sm text-white text-muted-foreground pt-2">
-                The registration charge is a fee levied by the government at the time of registering a property. The amount of registration charge payable varies depending on the state in which the property is located.
-                The registration charge is payable by the buyer of the property. The registration charge is usually paid at the time of registration of the property.
+                The registration charge is a fee levied by the government at the
+                time of registering a property. The amount of registration
+                charge payable varies depending on the state in which the
+                property is located. The registration charge is payable by the
+                buyer of the property. The registration charge is usually paid
+                at the time of registration of the property.
               </p>
             </div>
           </div>
