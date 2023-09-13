@@ -65,6 +65,30 @@ const StampPaperCalculation = () => {
         stampDutyRate: gender === "Male" ? 5.7 : gender === "Female" ? 6.3 : 6,
         registrationCharge: 2,
       },
+      "Andaman and Nicobar Islands": {
+        stampDutyRate: gender === "Male" ? 6 : 4,
+        registrationCharge: 1,
+      },
+      "Chandigarh": {
+        stampDutyRate: gender === "Male" ? 5 : 3,
+        registrationCharge: 1,
+      },
+      "Dadra and Nagar Haveli": {
+        stampDutyRate: gender === "Male" ? 6 : 4,
+        registrationCharge: 1,
+      },
+      "Daman and Diu": {
+        stampDutyRate: gender === "Male" ? 6 : 4,
+        registrationCharge: 1,
+      },
+      "Lakshadweep": {
+        stampDutyRate: gender === "Male" ? 6 : 4,
+        registrationCharge: 1,
+      },
+      "Puducherry": {
+        stampDutyRate: gender === "Male" ? 6 : 4,
+        registrationCharge: 1,
+      },
       Chhattisgarh: { stampDutyRate: 5, registrationCharge: 4 },
       Goa: {
         stampDutyRate:
@@ -145,7 +169,7 @@ const StampPaperCalculation = () => {
 
       // Calculate total charges (stamp duty + registration)
       const totalCharges = stampDutyCharges + registrationCharge;
-      console.log("Regis Size", stateRates.length);
+      console.log("Regis Size", Object.keys(stateRates).length);
 
       setFinalCharges(totalCharges);
       setFinalRates(stampDutyRate + registrationCharge);
