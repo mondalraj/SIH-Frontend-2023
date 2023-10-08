@@ -13,12 +13,20 @@ const AskContitution = () => {
     setAnswer("");
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setAnswer(
-        "The Constitution of India (IAST: Bhāratīya Saṃvidhāna) is the supreme law of India.[1][2] The document lays down the framework demarcating fundamental political code, structure, procedures, powers, and duties of government institutions and sets out fundamental rights, directive principles, and the duties of citizens. It is the longest written constitution of any country on earth.[3][4][5] B. R. Ambedkar, chairman of the drafting committee, is widely considered to be its chief architect.[6][7][8] It imparts constitutional supremacy (not parliamentary supremacy, since it was created by a constituent assembly rather than Parliament) and was adopted by its people with a declaration in its preamble.[9] Parliament cannot override the constitution."
-      );
-    }, 2000);
+    fetch(`https://sih-1fm0.onrender.com/constitution`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        question,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data: { answer: string }) => {
+        setLoading(false);
+        setAnswer(data.answer);
+      });
   };
   return (
     <div>
